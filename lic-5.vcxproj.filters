@@ -14,4 +14,61 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="maze.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d_except.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d_matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="maze1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze4.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze5.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze6.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze7.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze8.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze9.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze10.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze11.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze12.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="maze.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

@@ -68,7 +68,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Noah Lichtenstein\Desktop\boost_1_62_0;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Users\Noah Lichtenstein\Desktop\boost_1_62_0;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -110,6 +115,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="d_except.h" />
+    <ClInclude Include="d_matrix.h" />
+    <ClInclude Include="maze.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="maze.txt" />
+    <Text Include="maze1.txt" />
+    <Text Include="maze10.txt" />
+    <Text Include="maze11.txt" />
+    <Text Include="maze12.txt" />
+    <Text Include="maze2.txt" />
+    <Text Include="maze3.txt" />
+    <Text Include="maze4.txt" />
+    <Text Include="maze5.txt" />
+    <Text Include="maze6.txt" />
+    <Text Include="maze7.txt" />
+    <Text Include="maze8.txt" />
+    <Text Include="maze9.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
