@@ -141,6 +141,55 @@ void findPathDFSStack(Graph& g, maze& m, Vertex v, Vertex end, stack<Vertex>& s)
 	s = ts;
 }
 
+void findShortestPathDFS(Graph& g, maze& m, Vertex v, Vertex end, stack<Vertex>& s)
+{
+	stack<Vertex> shortest;
+	// add starting node to stack
+	g[v].visited = true;
+	s.push(v);
+
+	// while not at the end
+	while (s.size() > 0)
+	{
+		// store current place
+		Vertex curr = s.top();
+
+		// find an unvisited vertex
+		AdjIteratorRange aitR = adjacent_vertices(curr, g);
+		for (AdjIterator it = aitR.first; it != aitR.second; it++)
+		{
+			if (!g[*it].visited)
+			{
+				// add it to the stack
+				g[*it].visited = true;
+				s.push(*it);
+				break;
+			}
+		}
+		// if no new vertex was found
+		if (curr == s.top() && s.top() != end)
+		{
+			// go back a level
+			s.pop();
+		}
+
+		if (s.top() == end)
+		{
+			shortest = s;
+			s.pop();
+		}
+	}
+
+	// reverse order of the stack
+	stack<Vertex> ts;
+	while (s.size() > 0)
+	{
+		ts.push(s.top());
+		s.pop();
+	}
+	s = ts;
+}
+
 int main()
 {
 	try
@@ -164,13 +213,13 @@ int main()
 
 		Graph g;
 		m.mapMazeToGraph(g);
-		cout << g << endl;
+		//cout << g << endl;
 
 		clearVisited(g);
 		stack<Vertex> s;
 
 		findPathDFSRecursive(g, m, m.getNode(0, 0), m.getNode(m.numRows() - 1, m.numCols() - 1), s);
-		m.printPath(m.getNode(m.numRows() - 1, m.numCols() - 1), s, g);
+		//m.printPath(m.getNode(m.numRows() - 1, m.numCols() - 1), s, g);
 
 		cout << "-------------------------\n";
 		
@@ -178,8 +227,15 @@ int main()
 		clearVisited(g);
 
 		findPathDFSStack(g, m, m.getNode(0, 0), m.getNode(m.numRows() - 1, m.numCols() - 1), s);
-		m.printPath(m.getNode(m.numRows() - 1, m.numCols() - 1), s, g);
+		//m.printPath(m.getNode(m.numRows() - 1, m.numCols() - 1), s, g);
 
+		cout << "-------------------------\n";
+
+		s.empty();
+		clearVisited(g);
+
+		findShortestPathDFS(g, m, m.getNode(0, 0), m.getNode(m.numRows() - 1, m.numCols() - 1), s);
+		m.printPath(m.getNode(m.numRows() - 1, m.numCols() - 1), s, g);
 	}
 	catch (fileOpenError e)
 	{
