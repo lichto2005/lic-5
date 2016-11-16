@@ -54,6 +54,7 @@ public:
 		Graph g);
 	int numRows() { return rows; };
 	int numCols() { return cols; };
+	Vertex getNode(int i, int j) { return nodes[i][j]; };
 
 private:
 	int rows; // number of rows in the maze
@@ -167,6 +168,8 @@ void maze::printPath(Graph::vertex_descriptor end,
 	stack<Graph::vertex_descriptor> &s,
 	Graph g)
 {
+	if (s.size() == 0)
+		cout << "No path exists.\n";
 	while (s.size() > 0)
 	{
 		Vertex v = s.top();
