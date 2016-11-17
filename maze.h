@@ -136,25 +136,32 @@ void maze::mapMazeToGraph(Graph &g)
 	{
 		for (int j = 0; j < cols; j++)
 		{
+			// if move is legal
 			if (isLegal(i, j))
 			{
+				// add vertex
 				Vertex v = add_vertex(g);
 				g[v].cell = make_pair(i, j);
 				nodes[i][j] = v;
 
+				// if in bounds
 				if (i > 0)
 				{
+					// if previous node exists
 					if (isLegal(i - 1, j))
 					{
+						// create bidirectional edges
 						Edge e_up = add_edge(v, nodes[i - 1][j], g);
 						Edge e_down = add_edge(nodes[i - 1][j], v, g);
 					}
 				}
-
+				// if in bounds
 				if (j > 0)
 				{
+					// if previous node exists
 					if (isLegal(i, j - 1))
 					{
+						// create bidirectional edges
 						Edge e_left = add_edge(v, nodes[i][j - 1], g);
 						Edge e_right = add_edge(nodes[i][j - 1], v, g);
 					}
@@ -168,8 +175,10 @@ void maze::printPath(Graph::vertex_descriptor end,
 	stack<Graph::vertex_descriptor> &s,
 	Graph g)
 {
+	// if stack is empty, path was not found during search
 	if (s.size() == 0)
 		cout << "No path exists.\n";
+	// otherwise pop stack and print maze
 	while (s.size() > 0)
 	{
 		Vertex v = s.top();
