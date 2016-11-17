@@ -169,6 +169,12 @@ void findShortestPathDFS(Graph& g, maze& m, Vertex v, Vertex end, stack<Vertex>&
 	// if path goes from start to end
 	if (v == end)
 	{
+		// update s if this is the first path found
+		if (s.size() == 0)
+		{
+			s = s2;
+		}
+
 		// update s if path is shorter than current path
 		if (s2.size() < s.size())
 		{
@@ -234,6 +240,11 @@ void findShortestPathBFS(Graph& g, maze& m, Vertex v, Vertex end, stack<Vertex>&
 	while (q.size() > 0)
 	{
 		curr = q.front();
+		if (curr == end)
+		{
+			break;
+		}
+		g[curr].visited = true;
 		// add all unvisited adjacent nodes
 		AdjIteratorRange aitR = adjacent_vertices(curr, g);
 		for (AdjIterator it = aitR.first; it != aitR.second; ++it)
@@ -241,7 +252,6 @@ void findShortestPathBFS(Graph& g, maze& m, Vertex v, Vertex end, stack<Vertex>&
 			if (!g[*it].visited)
 			{
 				// add it to the stack
-				g[*it].visited = true;
 				g[*it].weight = g[curr].weight + 1;
 				// update predecessor to use when populating stack
 				g[*it].pred = curr;
@@ -254,7 +264,7 @@ void findShortestPathBFS(Graph& g, maze& m, Vertex v, Vertex end, stack<Vertex>&
 	}
 
 	// trace from end to start by following pred back to v
-	while (curr != LargeValue)
+	while (curr != v)
 	{
 		s.push(curr);
 		curr = g[curr].pred;
