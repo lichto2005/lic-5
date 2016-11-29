@@ -120,22 +120,20 @@
   <ItemGroup>
     <ClInclude Include="d_except.h" />
     <ClInclude Include="d_matrix.h" />
-    <ClInclude Include="maze.h" />
+    <ClInclude Include="heapV.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="maze.txt" />
-    <Text Include="maze1.txt" />
-    <Text Include="maze10.txt" />
-    <Text Include="maze11.txt" />
-    <Text Include="maze12.txt" />
-    <Text Include="maze2.txt" />
-    <Text Include="maze3.txt" />
-    <Text Include="maze4.txt" />
-    <Text Include="maze5.txt" />
-    <Text Include="maze6.txt" />
-    <Text Include="maze7.txt" />
-    <Text Include="maze8.txt" />
-    <Text Include="maze9.txt" />
+    <Text Include="graph1.txt" />
+    <Text Include="graph10.txt" />
+    <Text Include="graph2.txt" />
+    <Text Include="graph3.txt" />
+    <Text Include="graph4.txt" />
+    <Text Include="graph5.txt" />
+    <Text Include="graph6.txt" />
+    <Text Include="graph7.txt" />
+    <Text Include="graph8.txt" />
+    <Text Include="graph9.txt" />
+    <Text Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

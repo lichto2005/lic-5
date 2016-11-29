@@ -20,54 +20,48 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="maze.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="d_except.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="d_matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="heapV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="maze1.txt">
+    <Text Include="graph1.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze2.txt">
+    <Text Include="graph2.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze3.txt">
+    <Text Include="graph3.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze4.txt">
+    <Text Include="graph4.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze5.txt">
+    <Text Include="graph5.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze6.txt">
+    <Text Include="graph6.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze7.txt">
+    <Text Include="graph7.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze8.txt">
+    <Text Include="graph8.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze9.txt">
+    <Text Include="graph9.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze10.txt">
+    <Text Include="graph10.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="maze11.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="maze12.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="maze.txt">
+    <Text Include="readme.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
